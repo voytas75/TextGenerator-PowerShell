@@ -1,22 +1,3 @@
-<# 
-The script is used to generate random text based on a given model. The model consists of phrases and corresponding next word options. The script uses this model to generate text by selecting the next word based on the previous words in the generated text.
-
-The purpose of the script is to provide a flexible way to generate text that follows a certain pattern or theme. By adjusting the model and parameters, you can create different variations of the generated text.
-
-In the provided example, the script uses an animal-themed model to generate random sentences about animals. By specifying a seed word and other parameters, you can control the length and characteristics of the generated text.
-
-The script can be used for various purposes, such as:
-
-- Generating sample text for testing or demonstration purposes.
-- Creating placeholder content for websites or applications.
-- Generating random sentences or paragraphs for creative writing or brainstorming.
-- Simulating natural language for chatbots or virtual assistants.
-
-You can adapt the script to different models and themes based on your specific requirements. By customizing the model and parameters, you can generate text that suits your desired context or purpose.
-
-Please note that the provided script is a basic example, and its functionality can be extended or modified to suit specific use cases or requirements.
-#>
-
 function Convert-TextToModel {
     <#
     .SYNOPSIS
@@ -265,11 +246,7 @@ function GenerateSecureRandomNumber {
     }
 }
 
-
-
-
 $Text = Get-Content -Path .\TextGenerator2.txt | out-string
-
 
 $model = Convert-TextToModel -text $Text
 
