@@ -17,47 +17,6 @@ You can adapt the script to different models and themes based on your specific r
 Please note that the provided script is a basic example, and its functionality can be extended or modified to suit specific use cases or requirements.
 #>
 
-<# 
-$model = @{
-    "Animals are" = @("fascinating", "diverse")
-    "are fascinating" = @("creatures", "and have unique adaptations")
-    "are diverse" = @("in species", "and habitats")
-    "in species" = @("range from mammals", "to reptiles", "to birds", "to fish", "to insects")
-    "range from mammals" = @("such as lions", "such as elephants", "such as dolphins", "such as bears", "such as whales.")
-    "such as lions" = @("are majestic", "are powerful hunters.")
-    "such as elephants" = @("are intelligent", "have incredible memory.")
-    "such as dolphins" = @("are highly social", "are known for their acrobatics.")
-    "such as bears" = @("hibernate in winter", "are excellent climbers.")
-    "such as whales" = @("are the largest mammals", "migrate long distances.")
-    "to reptiles" = @("like snakes", "like turtles", "like crocodiles", "like lizards", "like tortoises.")
-    "like snakes" = @("are legless", "can swallow prey whole.")
-    "like turtles" = @("have protective shells", "can live for many years.")
-    "like crocodiles" = @("are ancient predators", "are well-adapted to aquatic life.")
-    "like lizards" = @("can regrow their tails", "are found in a variety of habitats")
-    "like tortoises" = @("have sturdy shells", "move slowly on land.")
-    "to birds" = @("such as eagles", "such as penguins", "such as parrots", "such as owls", "such as hummingbirds.")
-    "such as eagles" = @("are powerful flyers", "have excellent eyesight.")
-    "such as penguins" = @("are flightless", "are adapted to life in cold climates.")
-    "such as parrots" = @("are known for their mimicry", "are highly intelligent.")
-    "such as owls" = @("are nocturnal", "have silent flight.")
-    "such as hummingbirds" = @("have rapid wingbeats", "feed on nectar.")
-    "to fish" = @("like sharks", "like clownfish", "like salmon", "like angelfish", "like goldfish.")
-    "like sharks" = @("are apex predators", "have multiple rows of teeth.")
-    "like clownfish" = @("have a symbiotic relationship with anemones", "are brightly colored.")
-    "like salmon" = @("undertake long migrations", "are prized for their taste.")
-    "like angelfish" = @("have striking patterns", "are popular in aquariums.")
-    "like goldfish" = @("are domesticated pet fish", "come in various colors.")
-    "to insects" = @("like bees", "like butterflies", "like ants", "like beetles", "like dragonflies.")
-    "like bees" = @("are important pollinators", "live in complex social colonies.")
-    "like butterflies" = @("have beautiful wings", "undergo metamorphosis.")
-    "like ants" = @("work together in colonies", "can carry heavy loads.")
-    "like beetles" = @("are the most diverse insect group", "have hard outer wings.")
-    "like dragonflies" = @("are skilled flyers", "have large compound eyes.")
-}
-#>
-
-$Text = Get-Content -Path .\TextGenerator2.txt | out-string
-
 function Convert-TextToModel {
     <#
     .SYNOPSIS
@@ -306,11 +265,52 @@ function GenerateSecureRandomNumber {
     }
 }
 
+
+
+
 $Text = Get-Content -Path .\TextGenerator2.txt | out-string
+
 
 $model = Convert-TextToModel -text $Text
 
-#$model
+<# 
+$model = @{
+    "Animals are" = @("fascinating", "diverse")
+    "are fascinating" = @("creatures", "and have unique adaptations")
+    "are diverse" = @("in species", "and habitats")
+    "in species" = @("range from mammals", "to reptiles", "to birds", "to fish", "to insects")
+    "range from mammals" = @("such as lions", "such as elephants", "such as dolphins", "such as bears", "such as whales.")
+    "such as lions" = @("are majestic", "are powerful hunters.")
+    "such as elephants" = @("are intelligent", "have incredible memory.")
+    "such as dolphins" = @("are highly social", "are known for their acrobatics.")
+    "such as bears" = @("hibernate in winter", "are excellent climbers.")
+    "such as whales" = @("are the largest mammals", "migrate long distances.")
+    "to reptiles" = @("like snakes", "like turtles", "like crocodiles", "like lizards", "like tortoises.")
+    "like snakes" = @("are legless", "can swallow prey whole.")
+    "like turtles" = @("have protective shells", "can live for many years.")
+    "like crocodiles" = @("are ancient predators", "are well-adapted to aquatic life.")
+    "like lizards" = @("can regrow their tails", "are found in a variety of habitats")
+    "like tortoises" = @("have sturdy shells", "move slowly on land.")
+    "to birds" = @("such as eagles", "such as penguins", "such as parrots", "such as owls", "such as hummingbirds.")
+    "such as eagles" = @("are powerful flyers", "have excellent eyesight.")
+    "such as penguins" = @("are flightless", "are adapted to life in cold climates.")
+    "such as parrots" = @("are known for their mimicry", "are highly intelligent.")
+    "such as owls" = @("are nocturnal", "have silent flight.")
+    "such as hummingbirds" = @("have rapid wingbeats", "feed on nectar.")
+    "to fish" = @("like sharks", "like clownfish", "like salmon", "like angelfish", "like goldfish.")
+    "like sharks" = @("are apex predators", "have multiple rows of teeth.")
+    "like clownfish" = @("have a symbiotic relationship with anemones", "are brightly colored.")
+    "like salmon" = @("undertake long migrations", "are prized for their taste.")
+    "like angelfish" = @("have striking patterns", "are popular in aquariums.")
+    "like goldfish" = @("are domesticated pet fish", "come in various colors.")
+    "to insects" = @("like bees", "like butterflies", "like ants", "like beetles", "like dragonflies.")
+    "like bees" = @("are important pollinators", "live in complex social colonies.")
+    "like butterflies" = @("have beautiful wings", "undergo metamorphosis.")
+    "like ants" = @("work together in colonies", "can carry heavy loads.")
+    "like beetles" = @("are the most diverse insect group", "have hard outer wings.")
+    "like dragonflies" = @("are skilled flyers", "have large compound eyes.")
+}
+#>
 
 # Usage Example
 $generatedText = GenerateTextFromModel -seedWord "I like" -maxWords 50 -minNgramOrder 2 -maxNgramOrder 3 -k 0.5 -numAlternatives 2 -Model $model
