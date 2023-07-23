@@ -1,5 +1,7 @@
 # PowerShell Text Generator
 
+![PowerShell Text Generator](https://github.com/voytas75/TextGenerator-PowerShell/blob/master/images/letters_dust.png?raw=true "PowerShell Text Generator")
+
 This repository contains a PowerShell script that allows you to generate random text based on a given model. 
 
 ## Purpose
